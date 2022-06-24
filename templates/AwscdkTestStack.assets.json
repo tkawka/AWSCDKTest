@@ -3,7 +3,7 @@
   "files": {
     "d0e329c826245062fe7ebb3711956e31f359371949400cdcddc8a27bb86b4cbd": {
       "source": {
-        "path": "TomsTestStack.template.json",
+        "path": "AwscdkTestStack.template.json",
         "packaging": "file"
       },
       "destinations": {

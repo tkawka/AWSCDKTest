@@ -16,7 +16,7 @@
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain",
    "Metadata": {
-    "aws:cdk:path": "TomsTestStack/TomsDocumentBucket/Resource"
+    "aws:cdk:path": "AwscdkTestStack/TomsDocumentBucket/Resource"
    }
   },
   "CDKMetadata": {
@@ -25,7 +25,7 @@
     "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSM7LUM1BMLC/WTU7J1s3JTNKrDi5JTM7WAQrFFxvrVTuVJmenlug4p+VBWLUgpn9pSUEpWDAotTi/tCg5FcR2zs9LySzJzM+r1cnLT0nVyyrWLzM00zM01TNUzCrOzNQtKs0rycxN1QuC0AA6G7H1fQAAAA=="
    },
    "Metadata": {
-    "aws:cdk:path": "TomsTestStack/CDKMetadata/Default"
+    "aws:cdk:path": "AwscdkTestStack/CDKMetadata/Default"
    },
    "Condition": "CDKMetadataAvailable"
   }

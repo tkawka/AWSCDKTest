@@ -7,19 +7,19 @@
         "file": "tree.json"
       }
     },
-    "TomsTestStack.assets": {
+    "AwscdkTestStack.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "TomsTestStack.assets.json",
+        "file": "AwscdkTestStack.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "TomsTestStack": {
+    "AwscdkTestStack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "TomsTestStack.template.json",
+        "templateFile": "AwscdkTestStack.template.json",
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
@@ -27,7 +27,7 @@
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "TomsTestStack.assets"
+          "AwscdkTestStack.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
@@ -36,47 +36,47 @@
         }
       },
       "dependencies": [
-        "TomsTestStack.assets"
+        "AwscdkTestStack.assets"
       ],
       "metadata": {
-        "/TomsTestStack/TomsDocumentBucket/Resource": [
+        "/AwscdkTestStack/TomsDocumentBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "TomsDocumentBucket19717791"
           }
         ],
-        "/TomsTestStack/DocumentBucketNameExport": [
+        "/AwscdkTestStack/DocumentBucketNameExport": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DocumentBucketNameExport"
           }
         ],
-        "/TomsTestStack/CDKMetadata/Default": [
+        "/AwscdkTestStack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata"
           }
         ],
-        "/TomsTestStack/CDKMetadata/Condition": [
+        "/AwscdkTestStack/CDKMetadata/Condition": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadataAvailable"
           }
         ],
-        "/TomsTestStack/BootstrapVersion": [
+        "/AwscdkTestStack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/TomsTestStack/CheckBootstrapVersion": [
+        "/AwscdkTestStack/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "TomsTestStack"
+      "displayName": "AwscdkTestStack"
     }
   }
 }
