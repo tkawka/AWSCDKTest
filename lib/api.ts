@@ -4,7 +4,11 @@ import * as path from 'path';
 import { Runtime } from 'aws-cdk-lib/aws-lambda';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as iam from 'aws-cdk-lib/aws-iam';
-import * as apig from 'aws-cdk-lib/aws-apigatewayv2';
+import * as apig from '@aws-cdk/aws-apigatewayv2-alpha'
+import * as cdk from 'aws-cdk-lib';
+import * as apiIntegration from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+
+
 
 export interface DocumentManagementAPIProps {
     documentBucket: s3.Bucket
@@ -37,13 +41,24 @@ export class DocumentManagementAPI extends Construct {
         apiName: 'document-management-api',
         createDefaultStage: true,
         corsPreflight: {
-          allowMethods: [ apig.HttpMethod.GET ],
+          allowMethods: [apig.CorsHttpMethod.GET],
           allowOrigins: ['*'],
           maxAge: cdk.Duration.days(10),
         }
       });
 
-      
+      const integration = new apiIntegration.HttpLambdaIntegration('APIIntegration', getDocumentsFunction);
+      httpApi.addRoutes({
+        path: '/getDocuments',
+        methods: [
+          apig.HttpMethod.GET
+        ],
+        integration: integration
+      });
 
+      new cdk.CfnOutput(this, 'APIEndpoint', {
+        value: httpApi.url!,
+        exportName: 'APIEndpoint'
+      })
   }
 }
