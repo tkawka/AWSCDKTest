@@ -1,5 +1,5 @@
 # Welcome to your CDK TypeScript project
-# Author - Tom Kawka
+#### Author - Tom Kawka
 This is a project for the AWS Infrastructure with TypeScript: Getting Started Pluralsight course (https://app.pluralsight.com/library/courses/aws-infrastructure-typescript-getting-started/table-of-contents) 
 
 
