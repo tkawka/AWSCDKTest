@@ -1,8 +1,7 @@
 # Welcome to your CDK TypeScript project
+# Author - Tom Kawka
+This is a project for the AWS Infrastructure with TypeScript: Getting Started Pluralsight course (https://app.pluralsight.com/library/courses/aws-infrastructure-typescript-getting-started/table-of-contents) 
 
-This is a blank project for CDK development with TypeScript.
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
 
