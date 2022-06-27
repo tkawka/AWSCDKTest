@@ -6,6 +6,7 @@ import { Networking } from './networking';
 import { DocumentManagementAPI } from './api';
 import * as s3Deploy from 'aws-cdk-lib/aws-s3-deployment';
 import * as path from 'path';
+import { DocumentManagementWebserver } from './webserver';
 
 export class TomsAwscdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -44,6 +45,13 @@ export class TomsAwscdkStack extends Stack {
     const api = new DocumentManagementAPI(this, 'DocumentManagementAPI', { documentBucket: bucket });
 
     Tags.of(api).add('Module', 'API');
+
+    const webserver = new DocumentManagementWebserver(this, 'DocumentManagementWebserver', {
+      vpc: networkingStack.vpc,
+      api: api.httpApi
+    })
+
+    Tags.of(webserver).add('Module', 'Webserver');
 
   }
 }
